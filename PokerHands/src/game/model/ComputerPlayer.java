@@ -3,9 +3,10 @@ package game.model;
 
 public class ComputerPlayer implements Player {
 
+
 	@Override
 	public int[] selectCardValuesToThrow(int[] scoreCard) {
-		int[] output = new int[5];
+		int[] output = new int[5];//cards that will be discarded
 		if (scoreCard[0] == 45) {
 			// poker detected - swap extra card if it's below value of 10
 			if (scoreCard[2] < 10)

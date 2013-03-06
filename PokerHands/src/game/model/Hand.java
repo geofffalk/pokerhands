@@ -9,8 +9,8 @@ import java.util.Comparator;
 import java.util.TreeMap;
 
 public class Hand {
-	private TreeMap<Integer, Integer> cardTally;
-	private ArrayList<Card> cards;
+	private TreeMap<Integer, Integer> cardTally;//stores the values of the cards
+	private ArrayList<Card> cards;//stores the cards
 
 	/**Constructor sets cards arraylist
 	 * and cardTally that arranges card according to value
@@ -24,14 +24,23 @@ public class Hand {
 		});
 	}
 
+	/**Gets the cards
+	 * @return cards, an ArrayList of cards
+	 */
 	public ArrayList<Card> getCards() {
 		return cards;
 	}
 
+	/**Gets the TreeMap
+	 * @return cardTally, a tree map of card values
+	 */
 	public TreeMap<Integer, Integer> getCardTally() {
 		return cardTally;
 	}
 
+	/**Adds an arraylist of cards and then sorts the cards
+	 * @param cs, given arraylist of cards
+	 */
 	public void addCards(Card[] cs) {
 		for (Card c : cs) {
 			addCard(c);
@@ -40,6 +49,7 @@ public class Hand {
 	}
 	
 	/**Adds a card to the hand, and inserts card into cardTally as well 
+	 * @param c, given card
 	 */
 	public void addCard(Card c) {
 		cards.add(c);
@@ -52,6 +62,7 @@ public class Hand {
 	}
 
 	/**Removes card from hand, and adjusts cardTally also 
+	 * @param c, given card that will be removed
 	 */
 	public void removeCard(Card c) {
 		cards.remove(c);
@@ -59,19 +70,22 @@ public class Hand {
 		cardTally.put(cardValue, cardTally.get(cardValue) - 1);
 	}
 
+	//SHOULD THIS BE HERE?
 	public String getSuit() {
 		return null;
 	}
 	
-	/**Double dispatch Visitor pattern, so Analyser objects can check hand for scoring cobminations
-	 * @param Analyser object
+	/**Double dispatch Visitor pattern, so Analyser objects can check hand for scoring combinations
+	 * @param v, Analyser object
+	 * @return a boolean that indicates if the visited object has a certain status
 	 */
 	public boolean analyseMe(Analyser v) {
 		return v.visit(this);
 	}
 
 	/**Returns the first card found with given value 
-	 * @param int value to search for
+	 * @param i, int value to search for
+	 * @return c, card with the given value
 	 */
 	public Card getCardWithValue(int i) {
 		for (Card c : cards) {
@@ -82,6 +96,10 @@ public class Hand {
 		return null;
 	}
 	
+	/**Returns the card found at a given position in the arraylist
+	 * @param i, int position  to search for
+	 * @return card at the given position
+	 */
 	public Card getCardAtPosition(int i) {
 		return cards.get(i);
 	}

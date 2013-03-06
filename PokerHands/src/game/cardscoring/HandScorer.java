@@ -9,7 +9,7 @@ import game.model.Hand;
 
 import java.util.Arrays;
 
-/**HandScorer aggregrates the results of the various Analyser objects into the scoreTable field,
+/**HandScorer aggregates the results of the various Analyser objects into the scoreTable field,
  * scoreTable[0] shows the main combination found,
  * and is as follows:
  * 50 Straight flush

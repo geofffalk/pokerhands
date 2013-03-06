@@ -4,8 +4,8 @@ import java.util.Collections;
 import java.util.Stack;
 
 public class Dealer {
-	Stack<Card> pack;
-	static Dealer instance;
+	Stack<Card> pack;//Stores the pack of cards
+	static Dealer instance; //stores a dealing instance
 
 	/**Constructor, sets a new pack
 	 */
@@ -18,7 +18,7 @@ public class Dealer {
 	public void newPack() {
 		pack = new Stack<Card>();
 		String[] suits = new String[] { "hearts", "clubs", "diamonds", "spades" };
-		Integer[] values = new Integer[] {2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+		Integer[] values = new Integer[] {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
 				13,14};
 		for (String s : suits) {
 			for (Integer v : values) {
@@ -30,7 +30,7 @@ public class Dealer {
 	}
 
 	/**Allows the Dealer class to create a new instance of dealer
-	 * @return instance a new instance of Dealer class
+	 * @return instance, a new instance of Dealer class
 	 */
 	public static Dealer getInstance() {
 		if (instance == null) {
