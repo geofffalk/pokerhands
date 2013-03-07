@@ -1,6 +1,5 @@
 package game.cardanalysis;
 
-import game.model.Card;
 import game.model.Hand;
 
 
@@ -10,13 +9,6 @@ import game.model.Hand;
  * 
  */
 public class StraightAnalyser extends Analyser {
-
-
-	@Override
-	public boolean visit(Card card) {
-		System.out.println("Can't analyse a card for a straight");
-		return false;
-	}
 
 	@Override
 	public boolean visit(Hand hand) {

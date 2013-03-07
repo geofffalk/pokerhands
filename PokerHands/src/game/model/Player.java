@@ -3,8 +3,8 @@ package game.model;
 public interface Player {
 
 	/**Checks which cards should be kept
-	 * @param scoreCard,  given int arraylist which includes an overall score for the cards and values of the cards
-	 * @return int[], indexes of cards that will be discarded
+	 * @param scoreCard,  a given int arraylist which includes an overall score for the cards along with the values of the cards
+	 * @return int[], indexes of the cards to be discarded
 	 */
 	public int[] selectCardValuesToThrow(int[] scoreCard);
 

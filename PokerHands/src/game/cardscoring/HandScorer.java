@@ -43,10 +43,8 @@ public class HandScorer implements Scorer, Comparable<Scorer> {
 		return scoreTable;
 	}
 
-	/** 
-	 * Attaches Analyse objects to hand in order to score the hand. Results are stored in scoreTable field.
-	 */
-	private int[] calculateScore() {
+	
+	public int[] calculateScore() {
 		Analyser testForPoker = new MatchAnalyser(4);
 		Analyser testForFlush = new FlushAnalyser();
 		Analyser testForStraight = new StraightAnalyser();
@@ -126,13 +124,8 @@ public class HandScorer implements Scorer, Comparable<Scorer> {
 		return 0;
 	}
 
-	public String toString() {
-		return Arrays.toString(scoreTable);
-	}
 	
-	/** 
-	 * Returns a readable String of the contents of the hand.
-	 */
+	
 	public String toReadableString() {
 		String[] valueNames = new String[] { "Twos", "Threes", "Fours", "Fives",
 				"Sixes", "Sevens", "Eights", "Nines", "Tens", "Jacks", "Queens", "Kings", "Aces" };

@@ -29,12 +29,7 @@ public class HandTest {
 
 
 	
-	@Test
-	public void suitTest() {
-		String expectedResult = null;
-		String actualResult = hand.getSuit();
-		assertEquals("Wrong suit", expectedResult, actualResult);
-	}
+	
 	
 
 

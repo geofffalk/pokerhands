@@ -14,12 +14,12 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class GameController implements Observer {
-	GameDisplay display;
-	Dealer dealer;
-	Hand computerHand;
-	Hand humanHand;
-	Scorer computerScore;
-	Scorer humanScore;
+	GameDisplay display; //store what is to be displayed
+	Dealer dealer;//stores an instance of dealer
+	Hand computerHand;//computer's hand 
+	Hand humanHand;//human's hand
+	Scorer computerScore;//computer's score
+	Scorer humanScore;//human's score
 
 	public GameController() {
 		display = new GameDisplay();
@@ -29,6 +29,8 @@ public class GameController implements Observer {
 		display.getObservable().addObserver(this);
 	}
 
+	/**Carries out first few steps of playing a game
+	 */
 	public void begin() {
 		humanHand.addCards(dealer.dealFiveCards());
 		computerHand.addCards(dealer.dealFiveCards());
@@ -36,6 +38,9 @@ public class GameController implements Observer {
 		display.waitForUserDecision();
 	}
 
+	/** Carries out remaining actions for the game 
+	 *  once human has played
+	 */
 	private void startComputerRound() {
 		display.showFirstHand("Computer", computerHand);
 		computerScore = new HandScorer(computerHand);
@@ -55,6 +60,10 @@ public class GameController implements Observer {
 		showWinner();
 	}
 
+	/**Exchanges cards 
+	 * @param cards, the given cards to be exchanged
+	 * @param h, the given hand
+	 */
 	private void exchangeCards(ArrayList<Card> cards, Hand h) {
 		if (cards.size() == 0)
 			display.showNoCardExchange();
@@ -67,6 +76,8 @@ public class GameController implements Observer {
 		}
 	}
 
+	/**Checks who is the winner by comparing scores
+	 */
 	private void showWinner() {
 		if (computerScore.compareTo(humanScore) > 0)
 			display.showWinner("Computer");

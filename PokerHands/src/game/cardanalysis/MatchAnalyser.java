@@ -1,7 +1,6 @@
 package game.cardanalysis;
 
 
-import game.model.Card;
 import game.model.Hand;
 
 import java.util.Iterator;
@@ -12,17 +11,16 @@ import java.util.Iterator;
  */
 public class MatchAnalyser extends Analyser {
 	
-	private int numberOfCardsToMatch;
+	private int numberOfCardsToMatch; //stores number of cards to be matched (example 2 - will check for a pair)
+	
+	/**Constructor, sets foundValues and number of cards to match
+	 * @param c, number of cards that will be checked for (example 2 - will check for a pair)
+	 */
 	public MatchAnalyser(int c) {
 		super();
 		this.numberOfCardsToMatch = c;
 	}
 
-	@Override
-	public boolean visit(Card card) {
-		System.out.println("Can't analyse a single card for matches");
-		return false;
-	}
 
 	@Override
 	public boolean visit(Hand hand) {

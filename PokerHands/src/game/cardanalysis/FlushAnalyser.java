@@ -15,12 +15,6 @@ public class FlushAnalyser extends Analyser {
 
 
 	@Override
-	public boolean visit(Card card) {
-		System.out.println("Can't analyse a card for a flush");
-		return false;
-	}
-
-	@Override
 	public boolean visit(Hand hand) {
 		resetFoundValues(); 
 		boolean matchFound = true;

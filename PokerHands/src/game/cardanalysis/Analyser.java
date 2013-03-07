@@ -1,6 +1,5 @@
 package game.cardanalysis;
 
-import game.model.Card;
 import game.model.Hand;
 
 import java.util.ArrayList;
@@ -12,27 +11,40 @@ import java.util.ArrayList;
  * 
  */
 public abstract class Analyser {
-	private ArrayList<Integer> foundValues;
+	private ArrayList<Integer> foundValues; //stores the combinations of winning values 
 
+	/**Constructor, sets the foundValues
+	 */
 	public Analyser() {
 		foundValues = new ArrayList<>();
 	}
 
+	/**Resets foundValues to null
+	 */
 	public void resetFoundValues() {
 		foundValues = null;
 		foundValues = new ArrayList<>();
 	}
 
+	/**Checks the foundValues
+	 * @return foundValues, combinations of winning values
+	 */
 	public ArrayList<Integer> getFoundValues() {
 		return foundValues;
 	}
 
+	/**Adds a value to foundValues
+	 * @param i, a given value of a card
+	 */
 	public void addFoundValue(Integer i) {
 		this.foundValues.add(i);
 	}
 
-	public abstract boolean visit(Card card);
 
-	public abstract boolean visit(Hand card);
+	/**Visits a hand and analyses it accordingly
+	 * @param hand, to be anaylsed 
+	 * @return boolean, indicating the status of the card
+	 */
+	public abstract boolean visit(Hand hand);
 
 }

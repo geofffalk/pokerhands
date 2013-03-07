@@ -1,7 +1,5 @@
 package game.model;
 
-//import game.cardscoring.Analyser;
-
 
 public class Card implements Comparable<Card> {
 	private String suit;//suit of a card
@@ -54,13 +52,6 @@ public class Card implements Comparable<Card> {
 		cardValue = i;
 	}
 
-	
-//	public boolean analyseMe(Analyser v) {
-//		return v.visit(this);
-//
-//	}
-
-	
 	public String toString() {
 		return valueNames[getValue()- 2]  + " of " + getSuit();
 	}

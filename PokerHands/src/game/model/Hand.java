@@ -13,7 +13,7 @@ public class Hand {
 	private ArrayList<Card> cards;//stores the cards
 
 	/**Constructor sets cards arraylist
-	 * and cardTally that arranges card according to value
+	 * and cardTally arranging cards according to value
 	 */
 	public Hand() {
 		this.cards = new ArrayList<>();
@@ -69,15 +69,10 @@ public class Hand {
 		int cardValue = c.getValue();
 		cardTally.put(cardValue, cardTally.get(cardValue) - 1);
 	}
-
-	//SHOULD THIS BE HERE?
-	public String getSuit() {
-		return null;
-	}
 	
 	/**Double dispatch Visitor pattern, so Analyser objects can check hand for scoring combinations
 	 * @param v, Analyser object
-	 * @return a boolean that indicates if the visited object has a certain status
+	 * @return a boolean used to indicate if the visited object has a certain status
 	 */
 	public boolean analyseMe(Analyser v) {
 		return v.visit(this);
@@ -97,7 +92,7 @@ public class Hand {
 	}
 	
 	/**Returns the card found at a given position in the arraylist
-	 * @param i, int position  to search for
+	 * @param i, int position to search for
 	 * @return card at the given position
 	 */
 	public Card getCardAtPosition(int i) {

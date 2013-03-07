@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Stack;
 
 public class Dealer {
-	Stack<Card> pack;//Stores the pack of cards
+	Stack<Card> pack;//stores the pack of cards
 	static Dealer instance; //stores a dealing instance
 
 	/**Constructor, sets a new pack
@@ -29,7 +29,7 @@ public class Dealer {
 		shuffle();
 	}
 
-	/**Allows the Dealer class to create a new instance of dealer
+	/**Creates a new instance of dealer
 	 * @return instance, a new instance of Dealer class
 	 */
 	public static Dealer getInstance() {
