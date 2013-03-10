@@ -3,7 +3,7 @@ package game.cardscoring;
 public interface Scorer {
 	
 	/**Checks the score for a hand
-	 * @return int [] scoretable that will hold a score and values of the cards
+	 * @return int[] scoretable, that will hold a score and values of the cards
 	 */
 	public int[] getScore();
 

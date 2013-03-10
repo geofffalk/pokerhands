@@ -9,6 +9,7 @@ import game.model.Hand;
 import game.model.Player;
 import game.view.GameDisplay;
 
+
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -21,8 +22,8 @@ public class GameController implements Observer {
 	Scorer computerScore;//computer's score
 	Scorer humanScore;//human's score
 
-	public GameController() {
-		display = new GameDisplay();
+	public GameController(GameDisplay gDisplay) {
+		display = gDisplay;
 		dealer = Dealer.getInstance();
 		computerHand = new Hand();
 		humanHand = new Hand();
@@ -35,7 +36,6 @@ public class GameController implements Observer {
 		humanHand.addCards(dealer.dealFiveCards());
 		computerHand.addCards(dealer.dealFiveCards());
 		display.showFirstHand("Human", humanHand);
-		display.waitForUserDecision();
 	}
 
 	/** Carries out remaining actions for the game 
@@ -94,7 +94,7 @@ public class GameController implements Observer {
 			ArrayList<Card> cardsToExchange = new ArrayList<>();
 			for (int i = 0; i < ((int[]) arg).length; i++) {
 				cardsToExchange.add(humanHand
-						.getCardAtPosition(((int[]) arg)[i] - 1));
+						.getCardAtPosition(((int[]) arg)[i]));
 			}
 			exchangeCards(cardsToExchange, humanHand);
 			display.showSecondHand("Human", humanHand);
