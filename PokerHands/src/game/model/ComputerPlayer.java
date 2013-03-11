@@ -1,9 +1,12 @@
 package game.model;
 
 
+/**Creates a computer player object that can decide which cards to discard
+ */
 public class ComputerPlayer implements Player {
 
 
+	
 	@Override
 	public int[] selectCardValuesToThrow(int[] scoreCard) {
 		int[] output = new int[5];//cards that will be discarded

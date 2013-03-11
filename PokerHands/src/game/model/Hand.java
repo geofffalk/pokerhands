@@ -3,12 +3,13 @@ package game.model;
 
 import game.cardanalysis.Analyser;
 
-import java.awt.List;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.TreeMap;
 
+/**Creates a hand of cards used by players
+ */
 public class Hand {
 	private TreeMap<Integer, Integer> cardTally;//stores the values of the cards
 	private ArrayList<Card> cards;//stores the cards
@@ -100,27 +101,16 @@ public class Hand {
 		return cards.get(i);
 	}
 	
-	@Override
-	public String toString() {
-		StringBuffer output = new StringBuffer();
-		int index=1;
-		for (Card c : cards) {
-			output.append(index++ + ": " + c.toString() + "\n");
-		}
-		return output.toString();
-	}
 	
-	/**Makes a String list of the Hand, this will be used to populate the display
+	/**Makes a String array of the Hand, this used to populate the JList on the display panel
 	 * @return handList, an array of the card names plus an extra option not to exchange cards
 	 */
-	public String[] MakeList() {
-		String[] handList = new String[6];
+	public String[] PopulateJList() {
+		String[] handList = new String[5];
 		int index=1;
 		for (Card c : cards) {
 			handList[index-1] = (index++ + ": " + c.toString() + "\n");
 		}
-		handList[5] = "6: KEEP ALL CARDS";
-		
 		return handList;
 	}
 }

@@ -6,7 +6,6 @@ import game.model.Hand;
 /**
  * An Analyser class that checks to see whether the cards in a hand form a straight.
  * If so, the highest scoring card is stored in the foundValues field.
- * 
  */
 public class StraightAnalyser extends Analyser {
 
@@ -23,7 +22,6 @@ public class StraightAnalyser extends Analyser {
 			}
 		}
 		return matchFound;
-
 	}
 
 }

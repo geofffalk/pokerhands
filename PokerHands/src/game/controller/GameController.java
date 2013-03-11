@@ -9,11 +9,12 @@ import game.model.Hand;
 import game.model.Player;
 import game.view.GameDisplay;
 
-
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
+/**Acts as a controller for MVC pattern
+ */
 public class GameController implements Observer {
 	GameDisplay display; //store what is to be displayed
 	Dealer dealer;//stores an instance of dealer
@@ -22,6 +23,9 @@ public class GameController implements Observer {
 	Scorer computerScore;//computer's score
 	Scorer humanScore;//human's score
 
+	/**Initializes variables and adds an observer allowing this class to observe the display class  
+	 * @param gDisplay, given display
+	 */
 	public GameController(GameDisplay gDisplay) {
 		display = gDisplay;
 		dealer = Dealer.getInstance();
@@ -87,7 +91,7 @@ public class GameController implements Observer {
 			display.showWinner("Nobody");
 
 	}
-
+	
 	@Override
 	public void update(Observable o, Object arg) {
 		if (arg instanceof int[]) {

@@ -7,8 +7,6 @@ import game.cardanalysis.MatchAnalyser;
 import game.cardanalysis.StraightAnalyser;
 import game.model.Hand;
 
-import java.util.Arrays;
-
 /**HandScorer aggregates the results of the various Analyser objects into the scoreTable field,
  * scoreTable[0] shows the main combination found,
  * and is as follows:
@@ -43,7 +41,6 @@ public class HandScorer implements Scorer, Comparable<Scorer> {
 		return scoreTable;
 	}
 
-	
 	public int[] calculateScore() {
 		Analyser testForPoker = new MatchAnalyser(4);
 		Analyser testForFlush = new FlushAnalyser();
@@ -124,9 +121,8 @@ public class HandScorer implements Scorer, Comparable<Scorer> {
 		return 0;
 	}
 
-	
-	
-	public String toReadableString() {
+
+	public String toString() {
 		String[] valueNames = new String[] { "Twos", "Threes", "Fours", "Fives",
 				"Sixes", "Sevens", "Eights", "Nines", "Tens", "Jacks", "Queens", "Kings", "Aces" };
 		String firstCard = valueNames[scoreTable[1]-2];

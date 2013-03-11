@@ -1,5 +1,7 @@
 package game.model;
 
+/**Provides Guidelines of methods for player classes (example Computer player)
+ */
 public interface Player {
 
 	/**Checks which cards should be kept

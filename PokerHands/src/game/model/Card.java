@@ -1,6 +1,8 @@
 package game.model;
 
 
+/**Creates card objects
+ */
 public class Card implements Comparable<Card> {
 	private String suit;//suit of a card
 	private Integer cardValue;//value of a card
@@ -28,7 +30,6 @@ public class Card implements Comparable<Card> {
 	 */
 	private void setSuit(String s) {
 		this.suit = s;
-
 	}
 
 	/**Checks the suit of a card
@@ -52,6 +53,7 @@ public class Card implements Comparable<Card> {
 		cardValue = i;
 	}
 
+	
 	public String toString() {
 		return valueNames[getValue()- 2]  + " of " + getSuit();
 	}

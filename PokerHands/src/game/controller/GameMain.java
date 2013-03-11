@@ -1,19 +1,21 @@
 package game.controller;
 
 
+import java.awt.EventQueue;
+import javax.swing.JOptionPane;
 import game.view.GameFrame;
-
-import javax.swing.JFrame;
 
 public class GameMain {
 
 	public static void main(String[] args) {
-		GameFrame gFrame = new GameFrame();
-        gFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gFrame.setVisible(true);
-		
-		//GameController game = new GameController();
-		//game.begin();
+		EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                	 new GameFrame().setVisible(true);
+                } catch (Exception e) {
+                	JOptionPane.showMessageDialog(null,"Poker Application will not load");
+                }
+            }
+        });
 	}
-
 }

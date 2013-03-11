@@ -1,5 +1,7 @@
 package game.cardscoring;
 
+/**Provides guidelines for handscorer class that checks the score of a hand
+ */
 public interface Scorer {
 	
 	/**Checks the score for a hand
@@ -9,9 +11,10 @@ public interface Scorer {
 
 	/** 
 	 * Translates the contents of the hand into something readable.
-	 * @return a readable String of the contents of the hand.
+	 * @return a readable String stating the contents of the hand.
 	 */
-	public String toReadableString();
+	@Override
+	public String toString();
 
 
 	/**Compares this object to the specified object
@@ -23,7 +26,7 @@ public interface Scorer {
 	
 	/** 
 	 * Attaches Analyse objects to hand in order to score the hand. Results are stored in scoreTable field.
-	 * @return int [] scoretable that will hold a score and values of the cards
+	 * @return int[] scoretable that will hold a score and values of the cards
 	 */
 	public int[] calculateScore();
 }

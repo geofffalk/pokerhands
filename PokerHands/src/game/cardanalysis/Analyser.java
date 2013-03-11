@@ -8,7 +8,6 @@ import java.util.ArrayList;
  * Analyser class is an abstract class that is responsible for visiting a hand and scanning for
  * winning combinations. The value of the combination is stored in the
  * foundValues field.
- * 
  */
 public abstract class Analyser {
 	private ArrayList<Integer> foundValues; //stores the combinations of winning values 

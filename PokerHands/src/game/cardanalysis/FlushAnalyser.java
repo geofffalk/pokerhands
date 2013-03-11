@@ -13,7 +13,6 @@ import java.util.ArrayList;
  */
 public class FlushAnalyser extends Analyser {
 
-
 	@Override
 	public boolean visit(Hand hand) {
 		resetFoundValues(); 
@@ -29,9 +28,7 @@ public class FlushAnalyser extends Analyser {
 			}
 			addFoundValue(c.getValue());
 		}
-
 		return matchFound;
-
 	}
 
 }
