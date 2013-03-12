@@ -9,7 +9,6 @@ import java.util.ArrayList;
 /**
  * An Analyser class that checks to see whether all the cards in a hand are the same suit.
  * If so, the highest scoring card is stored in the foundValues field.
- * 
  */
 public class FlushAnalyser extends Analyser {
 

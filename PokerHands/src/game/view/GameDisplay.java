@@ -23,7 +23,6 @@ import javax.swing.border.TitledBorder;
  */
 @SuppressWarnings("serial")
 public class GameDisplay extends JPanel {
-	//Declare components as variables 
 	private DelegatedObservable obs;
 	private JPanel textPanel = new JPanel();
 	private JPanel player1Panel = new JPanel();
@@ -78,8 +77,6 @@ public class GameDisplay extends JPanel {
 		gameArea.setVisible(true);
 	}
 	
-	
-
 	/**Shows the first hand that is dealt to the player
 	 * @param player, given player
 	 * @param h, given hand
@@ -88,7 +85,7 @@ public class GameDisplay extends JPanel {
 		listbox1 = new JList<String>(h.PopulateJList());
 		FormatListBox(listbox1);
 		listbox1.setBorder(new TitledBorder(player + "'s First Hand"));
-			if(player == "Human"){
+			if(player =="Human"){
 				gameArea.append("Please select the cards to exchange and click CONFIRM EXCHANGE\n\nHold ctrl/cmd to select several");
 				player1Panel.add(listbox1);
 			   	buttonExchange.setVisible(true);
@@ -159,7 +156,7 @@ public class GameDisplay extends JPanel {
 		listbox2 = new JList<String>(h.PopulateJList());	
 		FormatListBox(listbox2);
 		listbox2.setBorder(new TitledBorder(player + "'s Final hand"));
-			if(player == "Human"){
+			if(player =="Human"){
 				player1Panel.add(listbox2);
 			}
 			else{

@@ -17,8 +17,6 @@ public class CardTest {
 	public void setUp() throws Exception {
 		card1 = new Card(3,"diamonds");
 		card2 = new Card(5,"spades");
-
-
 	}
 
 	@Test
@@ -37,6 +35,12 @@ public class CardTest {
 	}
 	
 
+	@Test
+	public void card2StringTest() {
+		String expectedResult = "Three of diamonds";
+		String actualResult = card1.toString();
+		assertEquals("Wrong!", expectedResult, actualResult);			
+	}
 	
 	
 

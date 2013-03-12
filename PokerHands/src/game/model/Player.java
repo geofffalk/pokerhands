@@ -1,6 +1,6 @@
 package game.model;
 
-/**Provides Guidelines of methods for player classes (example Computer player)
+/**Provides Guidelines for methods for player classes (example Computer player)
  */
 public interface Player {
 

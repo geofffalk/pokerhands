@@ -33,6 +33,7 @@ public class FlushAnalyserTest {
 		hand.addCard(c5);
 	}
 
+
 	@Test
 	public void test() {
 		Analyser flushAnalyser = new FlushAnalyser();
