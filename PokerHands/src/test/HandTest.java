@@ -42,7 +42,7 @@ public class HandTest {
 	public void removeCardTest() {
 		String expectedResult = "[1: Four of spades\n, 2: Six of spades\n, 3: Eight of spades\n, 4: Ten of spades\n, null]";
 		hand.removeCard(c1);
-		String actualResult =  Arrays.toString(hand.PopulateJList());
+		String actualResult =  Arrays.toString(hand.toStringArray());
 		assertEquals("Wrong!", expectedResult, actualResult);	
 	}
 	
@@ -52,7 +52,7 @@ public class HandTest {
 		String expectedResult = "[1: Four of spades\n, 2: Six of spades\n, 3: Eight of spades\n, 4: Nine of spades\n, 5: Ten of spades\n]";
 		hand.removeCard(c1);
 		hand.addCard(c6);
-		String actualResult = Arrays.toString(hand.PopulateJList());
+		String actualResult = Arrays.toString(hand.toStringArray());
 		assertEquals("Wrong!", expectedResult, actualResult);	
 	}
 
@@ -84,7 +84,7 @@ public class HandTest {
 	@Test
 	public void PopulateJListTest(){
 			String expectedResult = "[1: Two of spades\n, 2: Four of spades\n, 3: Six of spades\n, 4: Eight of spades\n, 5: Ten of spades\n]";
-			String actualResult = Arrays.toString(hand.PopulateJList());
+			String actualResult = Arrays.toString(hand.toStringArray());
 			assertEquals("Wrong!", expectedResult, actualResult);	
 	}	
 }

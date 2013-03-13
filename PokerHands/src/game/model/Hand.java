@@ -105,7 +105,7 @@ public class Hand {
 	/**Makes a String array of the Hand, this used to populate the JList on the display panel
 	 * @return handList, an array of the card names plus an extra option not to exchange cards
 	 */
-	public String[] PopulateJList() {
+	public String[] toStringArray() {
 		String[] handList = new String[5];
 		int index=1;
 		for (Card c : cards) {

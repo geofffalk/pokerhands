@@ -1,6 +1,7 @@
 package game.view;
 
 import game.controller.GameController;
+import game.view.playerDisplay;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -19,22 +20,21 @@ public class GameFrame extends JFrame
 	private JButton buttonNew = new JButton("New Game");
     private JButton buttonExit= new JButton("Exit Game");
     private JPanel topPanel  = new JPanel(new BorderLayout());  
+    private JPanel mainPanel  = new JPanel();
     private JLabel picLabel = new JLabel();
-    private GameDisplay display = new GameDisplay();
-    private GameController game = new GameController(display);
+    private GameController game;
  
-    final int FRAME_WIDTH = 1000;
-    final int FRAME_HEIGHT = 600;
-    
-    
     /**Constructor that builds basic elements of the frame
      */
     public GameFrame()
     {
     	this.obs = new DelegatedObservable();
         add(topPanel, BorderLayout.PAGE_START);
+        add(mainPanel, BorderLayout.CENTER);
         topPanel.setBackground(Color.black);
         topPanel.setLayout(new FlowLayout());
+        mainPanel.setBackground(Color.black);
+        mainPanel.setLayout(new FlowLayout());
         topPanel.add(buttonNew);
         topPanel.add(picLabel);
         topPanel.add(buttonExit);
@@ -44,18 +44,15 @@ public class GameFrame extends JFrame
         buttonExit.addActionListener(new ClickListener()); 
         buttonNew.addActionListener(new ClickListener());      
         buttonNew.setVisible(true);
-        buttonExit.setVisible(true);
-        setSize(FRAME_WIDTH,FRAME_HEIGHT);
-        setTitle("Poker - Geoff Falk, Claire Fennell");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
     }
-    
-    
+      
     /**Inner Class allows for exit and new game buttons to be pressed.
 	 */
     public class ClickListener implements ActionListener 
     {  
+    	private playerDisplay computerDisplay = new playerDisplay();
+    	private playerDisplay humanDisplay = new playerDisplay();
+    	
         public void actionPerformed(ActionEvent e) 
         {
             String command = e.getActionCommand();
@@ -68,22 +65,26 @@ public class GameFrame extends JFrame
             if(command == "New Game" )
             {
             	buttonNew.setText("Start Again"); 
-                add(display);
+            	mainPanel.add(humanDisplay);
+                mainPanel.add(computerDisplay);
+                computerDisplay.setVisible(false);
+                game = new GameController(humanDisplay, computerDisplay);
                 game.begin();
                 obs.setChanged();
             }
             if(command == "Start Again" )
             {  
-            	remove(display);
-            	display = new GameDisplay();
-            	game = new GameController(display);
-            	add(display);
-            	game.begin();
-                obs.setChanged();
-            }          
+            	remove(humanDisplay);
+                remove(computerDisplay);
+            	computerDisplay = new playerDisplay();
+        		humanDisplay = new playerDisplay();
+        		buttonNew.doClick();
+            }
         }
     }
+    
 }
+
 
             
       
