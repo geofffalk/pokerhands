@@ -7,22 +7,19 @@ import game.model.ComputerPlayer;
 import game.model.Dealer;
 import game.model.Hand;
 import game.model.Player;
-import game.view.DelegatedObservable;
 import game.view.playerDisplay;
-
 
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-import javax.swing.JPanel;
 
 /**Acts as a controller for MVC pattern
  */
 public class GameController implements Observer {
 	Dealer dealer;//stores an instance of dealer
-	playerDisplay computerDisplay; //display for computerPlayer
-	playerDisplay humanDisplay; //display for humanPlayer
+	playerDisplay cDisplay; //display for computerPlayer
+	playerDisplay hDisplay; //display for humanPlayer
 	Hand computerHand;//computer's hand 
 	Hand humanHand;//human's hand
 	Scorer computerScore;//computer's score
@@ -34,11 +31,11 @@ public class GameController implements Observer {
 	 */
 	public GameController(playerDisplay gHumanDisplay, playerDisplay gComputerDisplay) {
 		dealer = Dealer.getInstance();
-		computerDisplay = gComputerDisplay;
-		humanDisplay = gHumanDisplay;
+		cDisplay = gComputerDisplay;
+		hDisplay = gHumanDisplay;
 		computerHand = new Hand();
 		humanHand = new Hand();
-		humanDisplay.getObservable().addObserver(this);
+		hDisplay.getObservable().addObserver(this);
 	}
 
 
@@ -47,7 +44,7 @@ public class GameController implements Observer {
 	public void begin() {
 		humanHand.addCards(dealer.dealFiveCards());
 		computerHand.addCards(dealer.dealFiveCards());
-		humanDisplay.showFirstHand("Human", humanHand);
+		hDisplay.showFirstHand("Human", humanHand);
 	}
 
 	@Override
@@ -59,22 +56,20 @@ public class GameController implements Observer {
 						.getCardAtPosition(((int[]) arg)[i]));
 			}
 			exchangeCards(cardsToExchange, humanHand);
-			humanDisplay.showExchange(exchangeCards, cardsToExchange, computerHand);
-			humanDisplay.showSecondHand("Human", humanHand);
+			hDisplay.showExchange(exchangeCards, cardsToExchange, computerHand);
+			hDisplay.showSecondHand("Human", humanHand);
 			humanScore = new HandScorer(humanHand);
-			humanDisplay.showScore("Human", humanScore);
+			hDisplay.showScore("Human", humanScore);
 			startComputerRound();
 		}
 	}
-
-		
 
 	/** Carries out remaining actions for the game 
 	 *  once human has played
 	 */
 	private void startComputerRound() {
-		computerDisplay.setVisible(true);
-		computerDisplay.showFirstHand("Computer", computerHand);
+		cDisplay.setVisible(true);
+		cDisplay.showFirstHand("Computer", computerHand);
 		computerScore = new HandScorer(computerHand);
 		int[] score = computerScore.getScore();
 		Player computerPlayer = new ComputerPlayer();
@@ -86,10 +81,10 @@ public class GameController implements Observer {
 						.getCardWithValue(valuesToThrow[i]));
 		}
 		exchangeCards(cardsToExchange, computerHand);
-		computerDisplay.showExchange(exchangeCards, cardsToExchange, computerHand);
-		computerDisplay.showSecondHand("Computer", computerHand);
+		cDisplay.showExchange(exchangeCards, cardsToExchange, computerHand);
+		cDisplay.showSecondHand("Computer", computerHand);
 		computerScore= new HandScorer(computerHand);
-		computerDisplay.showScore("Computer", computerScore);
+		cDisplay.showScore("Computer", computerScore);
 		showWinner();
 	}
 
@@ -113,12 +108,10 @@ public class GameController implements Observer {
 	 */
 	private void showWinner() {
 		if (computerScore.compareTo(humanScore) > 0)
-			computerDisplay.showWinner("Computer");
+			cDisplay.showWinner("Computer");
 		else if (computerScore.compareTo(humanScore) < 0)
-			humanDisplay.showWinner("Human");
+			hDisplay.showWinner("Human");
 		else
-			humanDisplay.showWinner("Nobody");
-
+			hDisplay.showWinner("Nobody");
 	}
-	
 }

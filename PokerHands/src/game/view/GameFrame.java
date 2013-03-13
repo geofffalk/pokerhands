@@ -45,7 +45,8 @@ public class GameFrame extends JFrame
         buttonNew.addActionListener(new ClickListener());      
         buttonNew.setVisible(true);
     }
-      
+    
+    
     /**Inner Class allows for exit and new game buttons to be pressed.
 	 */
     public class ClickListener implements ActionListener 
@@ -57,7 +58,7 @@ public class GameFrame extends JFrame
         {
             String command = e.getActionCommand();
 
-            if (command == "Exit Game")
+            if(command == "Exit Game")
             {
                         System.exit(0);
             }
@@ -65,20 +66,29 @@ public class GameFrame extends JFrame
             if(command == "New Game" )
             {
             	buttonNew.setText("Start Again"); 
-            	mainPanel.add(humanDisplay);
-                mainPanel.add(computerDisplay);
-                computerDisplay.setVisible(false);
+                
                 game = new GameController(humanDisplay, computerDisplay);
                 game.begin();
+                mainPanel.add(humanDisplay);
+                mainPanel.add(computerDisplay);
+                computerDisplay.setVisible(false);
                 obs.setChanged();
-            }
-            if(command == "Start Again" )
-            {  
-            	remove(humanDisplay);
-                remove(computerDisplay);
-            	computerDisplay = new playerDisplay();
-        		humanDisplay = new playerDisplay();
-        		buttonNew.doClick();
+                revalidate();
+                repaint();        
+           }
+           if(command == "Start Again")
+           {    	 
+              mainPanel.removeAll();
+              computerDisplay = new playerDisplay();
+              humanDisplay = new playerDisplay();
+              mainPanel.add(humanDisplay);
+              mainPanel.add(computerDisplay);
+	          computerDisplay.setVisible(false);
+	          game = new GameController(humanDisplay, computerDisplay);
+	          game.begin();
+	          obs.setChanged();
+              revalidate();
+              repaint();          	
             }
         }
     }

@@ -48,7 +48,7 @@ public class playerDisplay extends JPanel {
 		setBackground(Color.white);
 		add(currentPanel);
 		currentPanel.setBackground(Color.white);
-		currentPanel.setPreferredSize(new Dimension(325,525));
+		currentPanel.setPreferredSize(new Dimension(325,500));
 		PrepareTextArea(beginComment);
 	}
 
@@ -144,7 +144,7 @@ public class playerDisplay extends JPanel {
 		winnerLabel.setForeground(Color.red.darker());
 		winnerLabel.setBackground(Color.white);
 		winnerLabel.setText("\n" + (winner + " wins!!").toUpperCase());
-		winnerLabel.setFont(new Font("SansSerif", Font.BOLD, 26));
+		winnerLabel.setFont(new Font("SansSerif", Font.BOLD, 22));
 		currentPanel.add(winnerLabel);
 	}
 
@@ -184,7 +184,7 @@ public class playerDisplay extends JPanel {
             	output = listbox1.getSelectedIndices();
             	UpdateScreen();
             }
-            else 
+            if ((command == "Confirm Exchange") && (listbox1.isSelectionEmpty()==true))
             {
             	JOptionPane.showMessageDialog(null,"Please make at least one selection");
             }
