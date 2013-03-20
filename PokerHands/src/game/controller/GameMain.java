@@ -10,7 +10,7 @@ import game.view.GameFrame;
 public class GameMain {
 	
 	  final static int FRAME_WIDTH = 800;
-	  final static int FRAME_HEIGHT = 700;
+	  final static int FRAME_HEIGHT = 750;
 
 	public static void main(String[] args) {
 		

@@ -54,6 +54,9 @@ public class PokerDealer implements Dealer {
 	 */
 	@Override
 	public Card dealACard() {
+		if (pack.size()<1) {
+			newPack();
+		}
 		return pack.pop();
 	}
 	
@@ -61,6 +64,9 @@ public class PokerDealer implements Dealer {
 	 * @return Card[] an array of 5 cards that will be used for a hand
 	 */
 	public Card[] dealFiveCards() {
+		if (pack.size()<5) {
+			newPack();
+		}
 		return new Card[] {pack.pop(), pack.pop(), pack.pop(), pack.pop(),
 							pack.pop() };
 	}
