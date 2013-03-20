@@ -2,7 +2,7 @@ package game.cardscoring;
 
 /**Provides guidelines for handscorer class that checks the score of a hand
  */
-public interface Scorer {
+public interface Scorer extends Comparable<Scorer> {
 	
 	/**Checks the score for a hand
 	 * @return int[] scoretable, that will hold a score and values of the cards

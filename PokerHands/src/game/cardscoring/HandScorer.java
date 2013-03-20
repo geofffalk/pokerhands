@@ -22,7 +22,7 @@ import game.model.Hand;
  * scoreTable[1] contains the card value of the winning card/combination.
  * scoreTable[2]-scoreTable[5] contains the value of the remaining cards, from highest to lowest
  */
-public class HandScorer implements Scorer, Comparable<Scorer> {
+public class HandScorer implements Scorer {
 	private Hand hand;
 	private int[] scoreTable;
 	boolean hasPoker, hasStraight, hasFlush, hasThreeOfAKind, hasPair;
