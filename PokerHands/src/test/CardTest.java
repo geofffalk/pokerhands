@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.Assert.*;
 import game.model.Card;
+import game.model.PokerCard;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,8 +16,8 @@ public class CardTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		card1 = new Card(3,"diamonds");
-		card2 = new Card(5,"spades");
+		card1 = new PokerCard(3,"diamonds");
+		card2 = new PokerCard(5,"spades");
 	}
 
 	@Test

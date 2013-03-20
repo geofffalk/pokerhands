@@ -3,6 +3,7 @@ package game.cardanalysis;
 
 import game.model.Card;
 import game.model.Hand;
+import game.model.PokerCard;
 
 import java.util.ArrayList;
 

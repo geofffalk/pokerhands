@@ -3,30 +3,31 @@ package test;
 import static org.junit.Assert.*;
 import game.cardanalysis.Analyser;
 import game.cardanalysis.MatchAnalyser;
-import game.model.Card;
 import game.model.Hand;
+import game.model.PokerCard;
+import game.model.PokerHand;
 
 import org.junit.Test;
 
 
 public class MatchAnalyserTest {
 
-	Card c1;
-	Card c2;
-	Card c3;
-	Card c4;
-	Card c5;
+	PokerCard c1;
+	PokerCard c2;
+	PokerCard c3;
+	PokerCard c4;
+	PokerCard c5;
 	Hand hand;
 
 
 	@Test
 	public void test() {
-		c1 = new Card(2, "diamonds");
-		c2 = new Card(2, "spades");
-		c3 = new Card(12, "clubs");
-		c4 = new Card(12, "hearts");
-		c5 = new Card(12, "spades");
-		hand = new Hand();
+		c1 = new PokerCard(2, "diamonds");
+		c2 = new PokerCard(2, "spades");
+		c3 = new PokerCard(12, "clubs");
+		c4 = new PokerCard(12, "hearts");
+		c5 = new PokerCard(12, "spades");
+		hand = new PokerHand();
 		hand.addCard(c1);
 		hand.addCard(c2);
 		hand.addCard(c3);
@@ -41,12 +42,12 @@ public class MatchAnalyserTest {
 
 	@Test
 	public void test2() {
-		c1 = new Card(2, "diamonds");
-		c2 = new Card(2, "spades");
-		c3 = new Card(12, "clubs");
-		c4 = new Card(12, "hearts");
-		c5 = new Card(12, "spades");
-		hand = new Hand();
+		c1 = new PokerCard(2, "diamonds");
+		c2 = new PokerCard(2, "spades");
+		c3 = new PokerCard(12, "clubs");
+		c4 = new PokerCard(12, "hearts");
+		c5 = new PokerCard(12, "spades");
+		hand = new PokerHand();
 		hand.addCard(c1);
 		hand.addCard(c2);
 		hand.addCard(c3);
@@ -61,12 +62,12 @@ public class MatchAnalyserTest {
 	
 	@Test
 	public void test3() {
-		c1 = new Card(2, "diamonds");
-		c2 = new Card(2, "spades");
-		c3 = new Card(12, "clubs");
-		c4 = new Card(12, "hearts");
-		c5 = new Card(12, "spades");
-		hand = new Hand();
+		c1 = new PokerCard(2, "diamonds");
+		c2 = new PokerCard(2, "spades");
+		c3 = new PokerCard(12, "clubs");
+		c4 = new PokerCard(12, "hearts");
+		c5 = new PokerCard(12, "spades");
+		hand = new PokerHand();
 		hand.addCard(c1);
 		hand.addCard(c2);
 		hand.addCard(c3);

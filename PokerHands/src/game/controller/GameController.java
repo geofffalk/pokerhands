@@ -3,9 +3,12 @@ package game.controller;
 import game.cardscoring.HandScorer;
 import game.cardscoring.Scorer;
 import game.model.Card;
-import game.model.ComputerPlayer;
 import game.model.Dealer;
 import game.model.Hand;
+import game.model.PokerCard;
+import game.model.ComputerPlayer;
+import game.model.PokerDealer;
+import game.model.PokerHand;
 import game.model.Player;
 import game.view.playerDisplay;
 
@@ -30,11 +33,11 @@ public class GameController implements Observer {
 	 * @param gDisplay, given display
 	 */
 	public GameController(playerDisplay gHumanDisplay, playerDisplay gComputerDisplay) {
-		dealer = Dealer.getInstance();
+		dealer = PokerDealer.getInstance();
 		cDisplay = gComputerDisplay;
 		hDisplay = gHumanDisplay;
-		computerHand = new Hand();
-		humanHand = new Hand();
+		computerHand = new PokerHand();
+		humanHand = new PokerHand();
 		hDisplay.getObservable().addObserver(this);
 	}
 

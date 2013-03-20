@@ -29,7 +29,7 @@ public class HandScorer implements Scorer, Comparable<Scorer> {
 	int numOfPairs;
 
 	/** HandScorer constructor
-	 *@param Hand object that is to be analysed
+	 *@param PokerHand object that is to be analysed
 	 */
 	public HandScorer(Hand h) {
 		this.hand = h;
