@@ -5,7 +5,6 @@ import game.cardscoring.Scorer;
 import game.model.Card;
 import game.model.Dealer;
 import game.model.Hand;
-import game.model.PokerCard;
 import game.model.ComputerPlayer;
 import game.model.PokerDealer;
 import game.model.PokerHand;
