@@ -69,10 +69,8 @@ public class PokerCard implements Card {
 	/* (non-Javadoc)
 	 * @see game.model.Card#compareTo(game.model.PokerCard)
 	 */
-
 	@Override
 	public int compareTo(Card o) {
-		// TODO Auto-generated method stub
 		int compareValue = ((Card) o).getValue();
 		return this.getValue() - compareValue;
 	}

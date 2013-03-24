@@ -5,6 +5,9 @@ package game.model;
  */
 public class ComputerPlayer implements Player {
 
+	/* (non-Javadoc)
+	 * @see game.model.Player#selectCardValuesToThrow(int[])
+	 */
 	@Override
 	public int[] selectCardValuesToThrow(int[] scoreCard) {
 		int[] output = new int[5];//cards that will be discarded

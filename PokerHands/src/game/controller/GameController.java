@@ -26,7 +26,7 @@ public class GameController implements Observer {
 	Hand humanHand;//human's hand
 	Scorer computerScore;//computer's score
 	Scorer humanScore;//human's score
-	boolean exchangeCards = false;
+	boolean exchangeCards = false;//stores whether cards are to be exchanged or not.
 
 	/**Initializes variables and adds an observer allowing this class to observe the display class  
 	 * @param gDisplay, given display
