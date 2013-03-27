@@ -7,7 +7,7 @@ import game.view.GameFrame;
 
 /**Contains Main method, opens initial frame
  */
-public class GameMain {
+public class PokerGame {
 	
 	  final static int FRAME_WIDTH = 800;
 	  final static int FRAME_HEIGHT = 750;

@@ -1,7 +1,7 @@
 package game.cardscoring;
 
 
-import game.cardanalysis.Analyser;
+import game.cardanalysis.AbstractAnalyser;
 import game.cardanalysis.FlushAnalyser;
 import game.cardanalysis.MatchAnalyser;
 import game.cardanalysis.StraightAnalyser;
@@ -42,12 +42,12 @@ public class HandScorer implements Scorer {
 	}
 
 	public int[] calculateScore() {
-		Analyser testForPoker = new MatchAnalyser(4);
-		Analyser testForFlush = new FlushAnalyser();
-		Analyser testForStraight = new StraightAnalyser();
-		Analyser testForThreeOfAKind = new MatchAnalyser(3);
-		Analyser testForPair = new MatchAnalyser(2);
-		Analyser testForSingle = new MatchAnalyser(1);
+		AbstractAnalyser testForPoker = new MatchAnalyser(4);
+		AbstractAnalyser testForFlush = new FlushAnalyser();
+		AbstractAnalyser testForStraight = new StraightAnalyser();
+		AbstractAnalyser testForThreeOfAKind = new MatchAnalyser(3);
+		AbstractAnalyser testForPair = new MatchAnalyser(2);
+		AbstractAnalyser testForSingle = new MatchAnalyser(1);
 		hasPoker = hand.analyseMe(testForPoker);
 		hasStraight = hand.analyseMe(testForStraight);
 		hasFlush = hand.analyseMe(testForFlush);

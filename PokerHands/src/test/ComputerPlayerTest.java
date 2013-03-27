@@ -2,8 +2,8 @@ package test;
 
 import static org.junit.Assert.*;
 
-import game.model.ComputerPlayer;
-import game.model.Player;
+import game.player.ComputerPlayer;
+import game.player.Player;
 
 import java.util.Arrays;
 

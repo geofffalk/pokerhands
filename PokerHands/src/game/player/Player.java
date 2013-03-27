@@ -1,4 +1,4 @@
-package game.model;
+package game.player;
 
 /**Provides Guidelines for methods for player classes (example Computer player)
  */

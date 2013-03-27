@@ -8,7 +8,7 @@ import java.util.Iterator;
  * An Analyser class that checks whether there are singles, pairs, triples or pokers in a hand.
  * If so, the values of the combinations are stored in the foundValues field.
  */
-public class MatchAnalyser extends Analyser {
+public class MatchAnalyser extends AbstractAnalyser {
 	
 	private int numberOfCardsToMatch; //stores number of cards to be matched (example 2 - will check for a pair)
 	

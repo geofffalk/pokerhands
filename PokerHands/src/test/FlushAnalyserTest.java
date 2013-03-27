@@ -1,7 +1,7 @@
 package test;
 
 import static org.junit.Assert.*;
-import game.cardanalysis.Analyser;
+import game.cardanalysis.AbstractAnalyser;
 import game.cardanalysis.FlushAnalyser;
 import game.model.Hand;
 import game.model.PokerCard;
@@ -37,7 +37,7 @@ public class FlushAnalyserTest {
 
 	@Test
 	public void test() {
-		Analyser flushAnalyser = new FlushAnalyser();
+		AbstractAnalyser flushAnalyser = new FlushAnalyser();
 		boolean expectedResult = true;
 		boolean actualResult = hand.analyseMe(flushAnalyser);
 		assertEquals("Wrong", expectedResult, actualResult);

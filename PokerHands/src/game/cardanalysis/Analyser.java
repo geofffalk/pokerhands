@@ -4,46 +4,32 @@ import game.model.Hand;
 
 import java.util.ArrayList;
 
-/**
- * Analyser class is an abstract class that is responsible for visiting a hand and scanning for
- * winning combinations. The value of the combination is stored in the
- * foundValues field.
- */
-public abstract class Analyser {
-	private ArrayList<Integer> foundValues; //stores the combinations of winning values 
+public interface Analyser {
 
-	/**Constructor, sets the foundValues
+
+	/**Visit a hand and analyse it for specific combination, using the Visitor design pattern. If card combination is found, return true, else return false
+	 * @param hand, to be analysed 
+	 * @return boolean, indicating whether a pattern has been found
 	 */
-	public Analyser() {
-		foundValues = new ArrayList<>();
-	}
+	public boolean visit(Hand hand);
+	
 
-	/**Resets foundValues to null
+	/**If a pattern is found, record the value of the card related to that pattern
+	 * @param i, the given value of a card
 	 */
-	public void resetFoundValues() {
-		foundValues = null;
-		foundValues = new ArrayList<>();
-	}
-
-	/**Checks the foundValues
-	 * @return foundValues, combinations of winning values
+	public void addFoundValue(Integer i);
+	
+	
+	/**Reset the found values
+	 *
 	 */
-	public ArrayList<Integer> getFoundValues() {
-		return foundValues;
-	}
-
-	/**Adds a value to foundValues
-	 * @param i, a given value of a card
+	public void resetFoundValues();
+	
+	
+	/**Return the found values
+	 *
 	 */
-	public void addFoundValue(Integer i) {
-		this.foundValues.add(i);
-	}
+	public ArrayList<Integer> getFoundValues();
 
-
-	/**Visits a hand and analyses it accordingly
-	 * @param hand, to be anaylsed 
-	 * @return boolean, indicating the status of the card
-	 */
-	public abstract boolean visit(Hand hand);
 
 }

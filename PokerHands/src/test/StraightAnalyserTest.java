@@ -1,7 +1,7 @@
 package test;
 
 import static org.junit.Assert.*;
-import game.cardanalysis.Analyser;
+import game.cardanalysis.AbstractAnalyser;
 import game.cardanalysis.StraightAnalyser;
 import game.model.Hand;
 import game.model.PokerCard;
@@ -37,7 +37,7 @@ public class StraightAnalyserTest {
 
 	@Test
 	public void test() {
-		Analyser straightAnalyser = new StraightAnalyser();
+		AbstractAnalyser straightAnalyser = new StraightAnalyser();
 		boolean expectedResult = true;
 		boolean actualResult = hand.analyseMe(straightAnalyser);
 		assertEquals("Wrong", expectedResult, actualResult);

@@ -1,7 +1,7 @@
 package test;
 
 import static org.junit.Assert.*;
-import game.cardanalysis.Analyser;
+import game.cardanalysis.AbstractAnalyser;
 import game.cardanalysis.MatchAnalyser;
 import game.model.Hand;
 import game.model.PokerCard;
@@ -33,7 +33,7 @@ public class MatchAnalyserTest {
 		hand.addCard(c3);
 		hand.addCard(c4);
 		hand.addCard(c5);
-		Analyser matchAnalyser = new MatchAnalyser(2);
+		AbstractAnalyser matchAnalyser = new MatchAnalyser(2);
 		boolean expectedResult = true;
 		boolean actualResult = hand.analyseMe(matchAnalyser);
 		assertEquals("Wrong", expectedResult, actualResult);
@@ -73,7 +73,7 @@ public class MatchAnalyserTest {
 		hand.addCard(c3);
 		hand.addCard(c4);
 		hand.addCard(c5);
-		Analyser matchAnalyser = new MatchAnalyser(3);
+		AbstractAnalyser matchAnalyser = new MatchAnalyser(3);
 		boolean expectedResult = true;
 		boolean actualResult = hand.analyseMe(matchAnalyser);
 		assertEquals("Wrong", expectedResult, actualResult);

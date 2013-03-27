@@ -5,10 +5,10 @@ import game.cardscoring.Scorer;
 import game.model.Card;
 import game.model.Dealer;
 import game.model.Hand;
-import game.model.ComputerPlayer;
 import game.model.PokerDealer;
 import game.model.PokerHand;
-import game.model.Player;
+import game.player.ComputerPlayer;
+import game.player.Player;
 import game.view.playerDisplay;
 
 import java.util.ArrayList;

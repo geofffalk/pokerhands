@@ -8,26 +8,27 @@ import java.util.TreeMap;
 public interface Hand {
 
 	/**Gets the cards
-	 * @return cards, an ArrayList of cards
+	 * @return an ArrayList of cards
 	 */
 	public abstract ArrayList<Card> getCards();
 
-	/**Gets the TreeMap
-	 * @return cardTally, a tree map of card values
+	/**Gets a collection of card values, sorted into a treemap. 
+	 * @return a tree map of card values, with the key being the card value, and value being the 
+	 * number of cards with that value
 	 */
 	public abstract TreeMap<Integer, Integer> getCardTally();
 
 	/**Adds an arraylist of cards and then sorts the cards
-	 * @param cs, given arraylist of cards
+	 * @param cs, given array of cards
 	 */
 	public abstract void addCards(Card[] cs);
 
-	/**Adds a card to the hand, and inserts card into cardTally as well 
+	/**Adds a card to the hand 
 	 * @param c, given card
 	 */
 	public abstract void addCard(Card c);
 
-	/**Removes card from hand, and adjusts cardTally also 
+	/**Removes card from hand 
 	 * @param c, given card that will be removed
 	 */
 	public abstract void removeCard(Card c);
@@ -40,7 +41,7 @@ public interface Hand {
 
 	/**Returns the first card found with given value 
 	 * @param i, int value to search for
-	 * @return c, card with the given value
+	 * @return card with the given value
 	 */
 	public abstract Card getCardWithValue(int i);
 
