@@ -66,7 +66,6 @@ public class GameFrame extends JFrame
             if(command == "New Game" )
             {
             	buttonNew.setText("Start Again"); 
-                
                 game = new GameController(humanDisplay, computerDisplay);
                 game.begin();
                 mainPanel.add(humanDisplay);

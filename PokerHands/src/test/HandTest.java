@@ -83,7 +83,7 @@ public class HandTest {
 	
 
 	@Test
-	public void PopulateJListTest(){
+	public void toStringArrayTest(){
 			String expectedResult = "[1: Two of spades\n, 2: Four of spades\n, 3: Six of spades\n, 4: Eight of spades\n, 5: Ten of spades\n]";
 			String actualResult = Arrays.toString(hand.toStringArray());
 			assertEquals("Wrong!", expectedResult, actualResult);	

@@ -22,7 +22,6 @@ public class PokerCard implements Card {
 		}
 		valueNames = new String[] { "Two", "Three", "Four", "Five",
 				"Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace" };
-
 	}
 	
 	/**Sets the suit of a card
@@ -72,7 +71,6 @@ public class PokerCard implements Card {
 
 	@Override
 	public int compareTo(Card o) {
-		// TODO Auto-generated method stub
 		int compareValue = ((Card) o).getValue();
 		return this.getValue() - compareValue;
 	}

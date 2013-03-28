@@ -5,7 +5,7 @@ import game.model.Hand;
 import java.util.ArrayList;
 
 /**
- * AbstractAnalyser class is an abstract class that implements the methods for setting, resetting and retreiving 
+ * AbstractAnalyser class is an abstract class that implements the methods for setting, resetting and retrieving 
  * the values for any winning combinations that are found by the visit method. These values are saved in
  * the foundValues field. The visit method is implemented by the individual AbstractAnalyser subclasses
  */

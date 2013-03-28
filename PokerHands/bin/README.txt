@@ -1,5 +1,5 @@
-Here is a short summary of the files and package structure of PokerHands, by Claire Fennell
-and Geoff Falk, Assignment 2 of OODP module 2013.
+Here is a short summary of the files and package structure of PokerHands, 
+by Claire Fennell and Geoff Falk, Assignment 2 of OODP module 2013.
 
 
 game.cardscoring
@@ -7,7 +7,6 @@ game.cardscoring
 
 Package responsible for calculating and comparing scores of given hands,
 based on analysis from Analyser classes
-classes.
 
 Scorer.java - interface file, defining methods to calculate, get, and compare scores in the form
 of an array of integers 
@@ -20,12 +19,12 @@ game.cardananalysis
 -------------------
 
 Package responsible for checking hand of cards for different winning combinations, such as pairs, straights etc. and
-retreiving the numerical value of winning combinations
+retrieving the numerical value of winning combinations
 
 Analyser.java - interface file, defining methods for visiting hands, and storing the values of winning combinations
 
 AbstractAnalyser.java - abstract parent class that implements Analyser, implementing the methods for saving, resetting and
-retreiving the values of winning combinations.
+retrieving the values of winning combinations.
 
 FlushAnalyser.java - implements visit method to checks hands for flushes of one suit
 
@@ -41,7 +40,7 @@ Package containing the model classes related to generating and storing cards and
 
 Card.java - interface file defining methods for getting and setting values and suits, and comparing cards
 
-Hand.java - interface file defining methods for getting, adding and removing cards, as well as retreiving a tally of the
+Hand.java - interface file defining methods for getting, adding and removing cards, as well as retrieving a tally of the
 different values contained within the hand
 
 Dealer.java - interface file defining methods for shuffling and dealing a pack of cards.
@@ -68,9 +67,12 @@ game.view
 
 Package containing GUI components
 
-GameFrame.java - defines main GUI components for game 
+DelegatedObservable.java - Allows delegation to an observer 
+
+GameFrame.java - defines main frame and it's components for game 
 
 playerDisplay.java - defines individual panels for each player
+
 
 
 game.controller
@@ -80,4 +82,4 @@ Package containing controller classes and main game driver
 
 GameController.java - controls flow of game
 
-GameMain.java - starts Swing thread
+PokerGame.java - contains main executable
