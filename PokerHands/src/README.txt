@@ -1,6 +1,10 @@
-Here is a short summary of the files and package structure of PokerHands, 
-by Claire Fennell and Geoff Falk, Assignment 2 of OODP module 2013.
 
+Names:Geoff Falk and Claire Fennell 
+Assignment 2 of OODP module 2013.
+Programme: MSc Learning Technologies (Both of us)
+Due Date: March 31st 2013 (Submitting 29th March)
+
+Here is a short summary of the files and package structure of PokerHands, 
 
 game.cardscoring
 ----------------
